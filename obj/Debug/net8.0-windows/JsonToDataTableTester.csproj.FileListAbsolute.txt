@@ -1,20 +1,21 @@
-C:\Users\britta\source\repos\JsonToDataTableTester\bin\Debug\net8.0-windows\JsonToDataTableTester.exe
-C:\Users\britta\source\repos\JsonToDataTableTester\bin\Debug\net8.0-windows\JsonToDataTableTester.deps.json
-C:\Users\britta\source\repos\JsonToDataTableTester\bin\Debug\net8.0-windows\JsonToDataTableTester.runtimeconfig.json
-C:\Users\britta\source\repos\JsonToDataTableTester\bin\Debug\net8.0-windows\JsonToDataTableTester.dll
-C:\Users\britta\source\repos\JsonToDataTableTester\bin\Debug\net8.0-windows\JsonToDataTableTester.pdb
-C:\Users\britta\source\repos\JsonToDataTableTester\obj\Debug\net8.0-windows\MainWindow.g.cs
-C:\Users\britta\source\repos\JsonToDataTableTester\obj\Debug\net8.0-windows\App.g.cs
-C:\Users\britta\source\repos\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester_MarkupCompile.cache
-C:\Users\britta\source\repos\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester_MarkupCompile.lref
-C:\Users\britta\source\repos\JsonToDataTableTester\obj\Debug\net8.0-windows\MainWindow.baml
-C:\Users\britta\source\repos\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.g.resources
-C:\Users\britta\source\repos\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\britta\source\repos\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.AssemblyInfoInputs.cache
-C:\Users\britta\source\repos\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.AssemblyInfo.cs
-C:\Users\britta\source\repos\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.csproj.CoreCompileInputs.cache
-C:\Users\britta\source\repos\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.dll
-C:\Users\britta\source\repos\JsonToDataTableTester\obj\Debug\net8.0-windows\refint\JsonToDataTableTester.dll
-C:\Users\britta\source\repos\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.pdb
-C:\Users\britta\source\repos\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.genruntimeconfig.cache
-C:\Users\britta\source\repos\JsonToDataTableTester\obj\Debug\net8.0-windows\ref\JsonToDataTableTester.dll
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\bin\Debug\net8.0-windows\JsonToDataTableTester.exe
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\bin\Debug\net8.0-windows\JsonToDataTableTester.deps.json
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\bin\Debug\net8.0-windows\JsonToDataTableTester.runtimeconfig.json
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\bin\Debug\net8.0-windows\JsonToDataTableTester.dll
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\bin\Debug\net8.0-windows\JsonToDataTableTester.pdb
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\MainWindow.g.cs
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\App.g.cs
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester_MarkupCompile.cache
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester_MarkupCompile.lref
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\MainWindow.baml
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.g.resources
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.GeneratedMSBuildEditorConfig.editorconfig
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.AssemblyInfoInputs.cache
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.AssemblyInfo.cs
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.sourcelink.json
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.dll
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\refint\JsonToDataTableTester.dll
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.pdb
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.genruntimeconfig.cache
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\ref\JsonToDataTableTester.dll

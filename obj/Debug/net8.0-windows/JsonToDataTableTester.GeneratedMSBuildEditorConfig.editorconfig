@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = JsonToDataTableTester
-build_property.ProjectDir = C:\Users\britta\source\repos\JsonToDataTableTester\
+build_property.ProjectDir = \\Mac\Home\Documents\Windows Git\JsonToDataTableTester\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

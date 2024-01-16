@@ -20,5 +20,15 @@ namespace JsonToDataTableTester
         {
             InitializeComponent();
         }
+
+        private void Execute_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Select_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
