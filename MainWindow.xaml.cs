@@ -1,34 +1,62 @@
-﻿using System.Text;
+﻿using JsonToDataTableTester.ViewModels;
+using Microsoft.Win32;
+using System.Data;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace JsonToDataTableTester
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        MainViewModel vm;
         public MainWindow()
         {
+            vm = new MainViewModel();
+            DataContext = vm;
             InitializeComponent();
-        }
-
-        private void Execute_Button_Click(object sender, RoutedEventArgs e)
-        {
+            
 
         }
 
         private void Select_Button_Click(object sender, RoutedEventArgs e)
         {
+            vm.LoadData();
+        }
 
+
+        private void Execute_Button_Click(object sender, RoutedEventArgs e) {
+        
+            int index = SelectTableBox.SelectedIndex;
+            vm.Execute(index);
+//            vm.CmbChanged(index);
+        
+        
+        }
+
+        private void ComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+          //if (sender is ComboBox box)
+          //  {
+          //      vm.CmbChanged(box.SelectedIndex);
+          //  }  
+        }
+
+        private void TextBox_Drop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                if (files != null && files.Length > 0)
+                {
+                    string filePath = files[0];
+
+                    if (Path.GetExtension(filePath).Equals(".json", StringComparison.OrdinalIgnoreCase))
+                    {                        
+                        vm.GetDataFromDragEnter(filePath);
+                    }
+                }
+            }
         }
     }
 }

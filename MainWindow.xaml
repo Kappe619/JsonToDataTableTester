@@ -2,38 +2,38 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:JsonToDataTableTester"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:viewmodels="clr-namespace:JsonToDataTableTester.ViewModels" 
+        d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
         mc:Ignorable="d"
-        Title="JSON to TataTable Tester" Height="450" Width="800">
-    <Grid>
+        AllowDrop="True"
+        Title="JSON to DataTable Tester" Height="800" Width="800">
+    <Grid AllowDrop="True">
 
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="80"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Bitte laden Sie eine gültige XML-Datei"/>
-        <Label Grid.Row="1" Grid.Column="0" Content="Beispiel XML"/>
-        <DataGrid Grid.Row="1" Grid.Column="1" />
-        <Button Grid.Row="1" Grid.Column="2" Content="..." Click="Select_Button_Click"/>
-        <Button Grid.Row="2" Grid.Column="2" Content="Ausführen" Click="Execute_Button_Click"/>
-        <Label Grid.Row="3" Grid.Column="0" Content="Tabellen"/>
-        <ComboBox Grid.Row="3" Grid.Column="1">
-            
-        </ComboBox>
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Bitte laden Sie eine gültige JSON-Datei"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Beispiel JSON"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding JsonStringInTextBox}" AcceptsReturn="True" Drop="TextBox_Drop" AllowDrop="True"/>
+        <Button Grid.Row="1" Grid.Column="2" Margin="3" Height="30" VerticalAlignment="Bottom" Content="..." Click="Select_Button_Click"/>
+        <Button Grid.Row="2" Grid.Column="2" Margin="3" Height="30" Content="Ausführen" Click="Execute_Button_Click"/>
+        <Label Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Content="Tabellen"/>
+        <ComboBox Grid.Row="3" Grid.Column="1" Margin="10" Height="30" VerticalAlignment="Top" ItemsSource="{Binding TableNames}" SelectedIndex="{Binding SelectedIndex}" x:Name="SelectTableBox"/>
         <Label Grid.Row="4" Grid.Column="0" Content="Ergebnis"/>
-        <DataGrid Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"  />
+        <DataGrid Grid.Row="5" Grid.Column="1" Margin="10" Grid.ColumnSpan="2" ItemsSource="{Binding SelectedTable}" x:Name="SelectedTableGrid"/>
 
-
+        <Label/>
     </Grid>
 </Window>
