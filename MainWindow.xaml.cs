@@ -29,9 +29,7 @@ namespace JsonToDataTableTester
         
             int index = SelectTableBox.SelectedIndex;
             vm.Execute(index);
-//            vm.CmbChanged(index);
-        
-        
+                
         }
 
         private void ComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -53,7 +51,7 @@ namespace JsonToDataTableTester
 
                     if (Path.GetExtension(filePath).Equals(".json", StringComparison.OrdinalIgnoreCase))
                     {                        
-                        vm.GetDataFromDragEnter(filePath);
+                        vm.GetDataFromDrop(filePath);
                     }
                 }
             }

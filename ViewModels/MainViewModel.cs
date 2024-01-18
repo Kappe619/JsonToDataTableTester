@@ -103,7 +103,7 @@ namespace JsonToDataTableTester.ViewModels
             ProcessJsonString(JsonStringInTextBox);
         }
 
-        public void GetDataFromDragEnter(string filePath)
+        public void GetDataFromDrop(string filePath)
         {
             if (Path.GetExtension(filePath).Equals(".json", StringComparison.OrdinalIgnoreCase))
             {
@@ -341,8 +341,6 @@ namespace JsonToDataTableTester.ViewModels
         public void Execute(int index = 0) {
             _jsonStringInTextBox = _jsonStringInTextBox;
             CmbChanged(index);
-
-
         }
 
 
