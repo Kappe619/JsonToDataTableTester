@@ -1,11 +1,10 @@
-﻿using System;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
 namespace Steigauf.MVVM.Command
 {
     public class GenericCommand<TParameter> : ICommand where TParameter : class
     {
-        public static readonly Func<TParameter, bool> DefaultCanExecuteHandler = p => p != null; 
+        public static readonly Func<TParameter, bool> DefaultCanExecuteHandler = p => p != null;
 
         private Action<TParameter> _command;
         private Func<TParameter, bool> _canExecuteSelector;
@@ -32,8 +31,8 @@ namespace Steigauf.MVVM.Command
                 return _command;
             }
 
-            set 
-            { 
+            set
+            {
                 _command = value;
                 OnCanExecuteChange();
             }
@@ -81,8 +80,8 @@ namespace Steigauf.MVVM.Command
 
         public event EventHandler CanExecuteChanged;
 
-        
-        
+
+
         protected virtual void OnCanExecuteChange()
         {
             var handler = CanExecuteChanged;

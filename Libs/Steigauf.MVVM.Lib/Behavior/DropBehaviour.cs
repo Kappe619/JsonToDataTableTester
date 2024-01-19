@@ -23,7 +23,7 @@ namespace Steigauf.MVVM
                         new PropertyMetadata(PreviewDropCommandPropertyChangedCallBack)
                     );
         #endregion
- 
+
         #region The getter and setter
         /// <summary>
         /// The setter. This sets the value of the PreviewDropCommandProperty
@@ -42,7 +42,7 @@ namespace Steigauf.MVVM
         {
             inUIElement.SetValue(PreviewDropCommandProperty, inCommand);
         }
- 
+
         /// <summary>
         /// Gets the PreviewDropCommand assigned to the PreviewDropCommandProperty
         /// DependencyProperty. As this is only needed by this class, it is private.
@@ -54,7 +54,7 @@ namespace Steigauf.MVVM
             return (ICommand)inUIElement.GetValue(PreviewDropCommandProperty);
         }
         #endregion
- 
+
         #region The PropertyChangedCallBack method
         /// <summary>
         /// The OnCommandChanged method. This event handles the initial binding and future
@@ -67,7 +67,7 @@ namespace Steigauf.MVVM
         {
             UIElement uiElement = inDependencyObject as UIElement;
             if (null == uiElement) return;
- 
+
             uiElement.Drop += (sender, args) =>
             {
                 GetPreviewDropCommand(uiElement).Execute(args);

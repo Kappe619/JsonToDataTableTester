@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace Steigauf.MVVM.Service
 {
@@ -59,7 +56,7 @@ namespace Steigauf.MVVM.Service
         }
 
 
-        public static void Unregister<TInterface>() 
+        public static void Unregister<TInterface>()
         {
             if (services.ContainsKey(typeof(TInterface)))
                 services.Remove(typeof(TInterface));

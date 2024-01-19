@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Steigauf.MVVM.Command
+﻿namespace Steigauf.MVVM.Command
 {
     public class BaseCommand : GenericCommand<object>
     {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Data;
+﻿using System.Windows.Data;
 
 namespace Steigauf.MVVM.Converter
 {
@@ -10,10 +6,10 @@ namespace Steigauf.MVVM.Converter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            if (string.IsNullOrEmpty((string)value)) 
+            if (string.IsNullOrEmpty((string)value))
                 return string.Empty;
             String sValue = (string)value;
-            if(sValue.Contains("\r\n"))
+            if (sValue.Contains("\r\n"))
                 value = sValue.Replace("\r\n", " ");
             return value;
         }

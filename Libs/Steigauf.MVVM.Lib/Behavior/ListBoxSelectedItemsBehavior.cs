@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Linq;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Controls;
 
 namespace Steigauf.MVVM
 {
@@ -16,7 +11,7 @@ namespace Steigauf.MVVM
                 typeof(ListBoxSelectedItemsBehavior),
                 new FrameworkPropertyMetadata(new PropertyChangedCallback(OnSelectedItemsChangedHandlerChanged)));
 
-       
+
         public static ICommand GetSelectedItemsChangedHandler(DependencyObject element)
         {
             if (element == null)

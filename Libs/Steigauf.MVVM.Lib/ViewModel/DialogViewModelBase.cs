@@ -1,7 +1,4 @@
-﻿using System.ComponentModel;
-using System.Windows.Input;
-using System.Windows;
-using System;
+﻿using System.Windows.Input;
 
 namespace Steigauf.MVVM
 {
@@ -29,7 +26,7 @@ namespace Steigauf.MVVM
         //private Steigauf.MVVM.Command.RelayCommand _closeCommand;
         //public event EventHandler RequestClose;
 
-        
+
         ///// <summary>
         ///// OnRequestClose(); muss aus dem ViewModel aufgerufen werden um die View zu schließen.
         ///// VIEWMODEL.RequestClose += delegate (object sender, EventArgs args) { VIEW.Close(); }
@@ -74,30 +71,30 @@ namespace Steigauf.MVVM
         //Das Command CloseCommand benötigt den EventHandler OnClosingRequest und die Funktion OnClosingRequest
         Steigauf.MVVM.Command.DelegateCommand _closeCommand;
         public ICommand CloseCommand
-    {
-        get
         {
-            if (this._closeCommand == null)
+            get
             {
-                _closeCommand = new Steigauf.MVVM.Command.DelegateCommand(OnClosingRequest);
+                if (this._closeCommand == null)
+                {
+                    _closeCommand = new Steigauf.MVVM.Command.DelegateCommand(OnClosingRequest);
+                }
+                return this._closeCommand;
             }
-            return this._closeCommand;
         }
-    }
 
-    #region Request Close Event
-    public event System.EventHandler ClosingRequest;
-    
-    //Aufruf von außen vor ShowDialog(): VM.ClosingRequest += (sender, e) => ed.Close();
-    protected virtual void OnClosingRequest()
-    {
-        System.EventHandler handler = this.ClosingRequest;
-        if (handler != null)
+        #region Request Close Event
+        public event System.EventHandler ClosingRequest;
+
+        //Aufruf von außen vor ShowDialog(): VM.ClosingRequest += (sender, e) => ed.Close();
+        protected virtual void OnClosingRequest()
         {
-            handler(this, System.EventArgs.Empty);
+            System.EventHandler handler = this.ClosingRequest;
+            if (handler != null)
+            {
+                handler(this, System.EventArgs.Empty);
+            }
         }
+        #endregion
+        #endregion
     }
-    #endregion
-    #endregion
-  }
 }

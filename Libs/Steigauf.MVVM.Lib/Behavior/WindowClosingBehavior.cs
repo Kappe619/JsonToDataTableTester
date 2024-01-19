@@ -1,15 +1,13 @@
 ﻿// <copyright file="WindowClosingBehavior.cs" company="Nish Sivakumar">
 // Copyright (c) Nish Sivakumar. All rights reserved.
 // </copyright>
-using System;
 using System.ComponentModel;
-using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
 namespace Steigauf.MVVM
 {
-    
+
     public class WindowClosingBehavior
     {
         public static ICommand GetClosed(DependencyObject obj)
@@ -29,7 +27,7 @@ namespace Steigauf.MVVM
         private static void ClosedChanged(DependencyObject target, DependencyPropertyChangedEventArgs e)
         {
             Window window = target as Window;
-            
+
             if (window != null)
             {
                 if (e.NewValue != null)

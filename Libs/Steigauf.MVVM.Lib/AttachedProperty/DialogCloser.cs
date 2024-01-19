@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 
 namespace Steigauf.MVVM
 {
-    public static class DialogCloser 
+    public static class DialogCloser
     {
         public static readonly DependencyProperty DialogResultProperty =
             DependencyProperty.RegisterAttached(

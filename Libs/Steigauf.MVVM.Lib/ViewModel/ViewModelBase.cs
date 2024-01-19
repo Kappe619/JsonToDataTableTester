@@ -1,7 +1,5 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics;
-using System.Windows.Input;
-using System.Windows;
 
 
 namespace Steigauf.MVVM
@@ -28,7 +26,7 @@ namespace Steigauf.MVVM
         //    get;
         //    set;
         //}
-         
+
         #endregion
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace Steigauf.MVVM.Service
         /// <param name="view">The unregistered View.</param>
         void Unregister(FrameworkElement view);
 
-        
+
         /// <summary>
         /// Shows a dialog.
         /// </summary>

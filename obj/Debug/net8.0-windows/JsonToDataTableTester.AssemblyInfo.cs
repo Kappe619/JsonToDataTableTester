@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JsonToDataTableTester")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22209caf583c2b8f1a36826f21dc0603a75b956c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+326eeed4b778fcd72b826cf1c1b6c638eff19347")]
 [assembly: System.Reflection.AssemblyProductAttribute("JsonToDataTableTester")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JsonToDataTableTester")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

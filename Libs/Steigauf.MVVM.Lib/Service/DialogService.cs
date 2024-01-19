@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Windows;
- 
+
 namespace Steigauf.MVVM.Service
 {
     /// <summary>
@@ -189,7 +186,7 @@ namespace Steigauf.MVVM.Service
             // Show dialog
             return dialog.ShowDialog();
         }
-        
+
 
         /// <summary>
         /// Finds window corresponding to specified ViewModel.

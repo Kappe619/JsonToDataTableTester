@@ -3,6 +3,8 @@
 \\Mac\Home\Documents\Windows Git\JsonToDataTableTester\bin\Debug\net8.0-windows\JsonToDataTableTester.runtimeconfig.json
 \\Mac\Home\Documents\Windows Git\JsonToDataTableTester\bin\Debug\net8.0-windows\JsonToDataTableTester.dll
 \\Mac\Home\Documents\Windows Git\JsonToDataTableTester\bin\Debug\net8.0-windows\JsonToDataTableTester.pdb
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.csproj.AssemblyReference.cache
 \\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\MainWindow.g.cs
 \\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\App.g.cs
 \\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester_MarkupCompile.cache
@@ -14,6 +16,7 @@
 \\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.AssemblyInfo.cs
 \\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.csproj.CoreCompileInputs.cache
 \\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.sourcelink.json
+\\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.csproj.CopyComplete
 \\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.dll
 \\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\refint\JsonToDataTableTester.dll
 \\Mac\Home\Documents\Windows Git\JsonToDataTableTester\obj\Debug\net8.0-windows\JsonToDataTableTester.pdb

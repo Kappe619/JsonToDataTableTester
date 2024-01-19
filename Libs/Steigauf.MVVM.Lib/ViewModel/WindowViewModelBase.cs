@@ -1,11 +1,10 @@
-﻿using System.ComponentModel;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows;
 
 namespace Steigauf.MVVM
 {
-    public abstract class WindowViewModelBase : ViewModelBase , System.IDisposable
-  {
+    public abstract class WindowViewModelBase : ViewModelBase, System.IDisposable
+    {
         protected bool _disposed;
 
         private Steigauf.MVVM.Command.DelegateCommand exitCommand;
@@ -50,79 +49,79 @@ namespace Steigauf.MVVM
         //nsmvvm:WindowClosingBehavior.CancelClosing="{Binding CancelClosingCommand}"
 
         private Steigauf.MVVM.Command.DelegateCommand closedCommand;
-    public ICommand WindowClosedCommand
-    {
-        get
+        public ICommand WindowClosedCommand
         {
-            if (closedCommand == null)
+            get
             {
-                closedCommand = new Steigauf.MVVM.Command.DelegateCommand(onWindowClosed);
+                if (closedCommand == null)
+                {
+                    closedCommand = new Steigauf.MVVM.Command.DelegateCommand(onWindowClosed);
+                }
+                return closedCommand;
             }
-            return closedCommand;
         }
-    }
 
-    protected abstract void onWindowClosed();
+        protected abstract void onWindowClosed();
 
-    private Steigauf.MVVM.Command.DelegateCommand closingCommand;
+        private Steigauf.MVVM.Command.DelegateCommand closingCommand;
 
-    public ICommand WindowClosingCommand
-    {
-        get
+        public ICommand WindowClosingCommand
         {
-            if (closingCommand == null)
+            get
             {
-                closingCommand = new Steigauf.MVVM.Command.DelegateCommand(onWindowClosing, canWindowClose);
+                if (closingCommand == null)
+                {
+                    closingCommand = new Steigauf.MVVM.Command.DelegateCommand(onWindowClosing, canWindowClose);
+                }
+                return closingCommand;
             }
-            return closingCommand;
         }
-    }
 
-    protected abstract void onWindowClosing();
-    protected abstract bool canWindowClose();
+        protected abstract void onWindowClosing();
+        protected abstract bool canWindowClose();
 
-    private Steigauf.MVVM.Command.DelegateCommand cancelClosingCommand;
-    public ICommand CancelWindowClosingCommand
-    {
-        get
+        private Steigauf.MVVM.Command.DelegateCommand cancelClosingCommand;
+        public ICommand CancelWindowClosingCommand
         {
-            if (cancelClosingCommand == null)
+            get
             {
-                cancelClosingCommand = new Steigauf.MVVM.Command.DelegateCommand(cancelWindowClosing);
+                if (cancelClosingCommand == null)
+                {
+                    cancelClosingCommand = new Steigauf.MVVM.Command.DelegateCommand(cancelWindowClosing);
+                }
+                return cancelClosingCommand;
             }
-            return cancelClosingCommand;
         }
-    }
 
-    protected abstract void cancelWindowClosing();
+        protected abstract void cancelWindowClosing();
 
-#endregion
+        #endregion
 
-    #region "Prism"
-    /// <summary>
-    /// Stellt einen Ort für den Dialogservice bereit
-    /// </summary>
-    public virtual Steigauf.MVVM.Service.IDialogService DialogService
-    {
-        get;
-        set;
-    }
-    #endregion
-
-
-    #region Closed Event
-    public event System.EventHandler Closed;
-
-    protected void OnClosed()
-    {
-        System.EventHandler handler = this.Closed;
-        if (handler != null)
+        #region "Prism"
+        /// <summary>
+        /// Stellt einen Ort für den Dialogservice bereit
+        /// </summary>
+        public virtual Steigauf.MVVM.Service.IDialogService DialogService
         {
-            handler(this, System.EventArgs.Empty);
+            get;
+            set;
         }
-    }
-    #endregion
-    
+        #endregion
+
+
+        #region Closed Event
+        public event System.EventHandler Closed;
+
+        protected void OnClosed()
+        {
+            System.EventHandler handler = this.Closed;
+            if (handler != null)
+            {
+                handler(this, System.EventArgs.Empty);
+            }
+        }
+        #endregion
+
         #region IDisposable implementation
 
         public void Dispose()
@@ -149,6 +148,6 @@ namespace Steigauf.MVVM
             Dispose(false);
         }
 
-#endregion
+        #endregion
     }
 }

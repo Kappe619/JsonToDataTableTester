@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "mfrpoSQYt+yB1/lK3cmbgx0Mu3EZvp/4qdvK40pPOMHugT1elxgjZhl8tlM+Da/fdqZI6ObXYhOvfHuaoG8r1g==",
+  "dgSpecHash": "QgcIYMim9xAzblsZqh3pS80tfTU1k7MeNebaE6JEiR94FBjyVgJrk0Wh36gGwJZVkDIwJP7IF5Y/AAhKDsg/Dg==",
   "success": true,
   "projectFilePath": "\\\\Mac\\Home\\Documents\\Windows Git\\JsonToDataTableTester\\JsonToDataTableTester.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\britta\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

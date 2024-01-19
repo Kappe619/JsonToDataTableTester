@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -71,7 +67,7 @@ namespace Steigauf.MVVM.Command
         {
             return (ICommand)obj.GetValue(DoubleClickCommandProperty);
         }
-        
+
         static void DoubleClickCallBack(DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
             UIElement element = obj as UIElement;
@@ -106,7 +102,7 @@ namespace Steigauf.MVVM.Command
 
                         //if (lb != null)
                         //{
-                            command.Execute(string.Empty);
+                        command.Execute(string.Empty);
                         //}
                     }
                 }
