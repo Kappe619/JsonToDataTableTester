@@ -1,26 +1,25 @@
 ﻿using JsonToDataTableTester.Models;
-using System.Collections.ObjectModel;
-using System.IO;
-using Newtonsoft.Json.Linq;
-using System.Dynamic;
-using System.ComponentModel;
-using System.Windows;
-using System.Data;
 using Microsoft.Win32;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Data;
+using System.IO;
+using System.Windows;
 
 namespace JsonToDataTableTester.ViewModels
 {
     class MainViewModel : INotifyPropertyChanged
     {
-
+        private int _selectedIndex;
+        private List<string> _tableNames;
+        private DataTable _selectedTable;
         private DataTable _dataTable;
         private string _jsonStringInTextBox;
         private List<DataTable> tables;
-        private List<string> _tableNames;
-        private DataTable _selectedTable;
         private DataTable MainTable;
-        private int _selectedIndex;
+        private ObservableCollection<DataModel> _dataCollection;
 
         public int SelectedIndex
         {
@@ -31,7 +30,6 @@ namespace JsonToDataTableTester.ViewModels
                 OnPropertyChanged(nameof(SelectedIndex));
             }
         }
-
         public List<string> TableNames
         {
             get => _tableNames;
@@ -69,14 +67,13 @@ namespace JsonToDataTableTester.ViewModels
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
+        public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private ObservableCollection<DataModel> _dataCollection;
         public ObservableCollection<DataModel> DataCollection
         {
             get => _dataCollection;
@@ -92,7 +89,7 @@ namespace JsonToDataTableTester.ViewModels
 
         public MainViewModel()
         {
-            DataCollection = new ObservableCollection<DataModel>();
+            DataCollection = new();
             TableNames = new List<string>();
             tables = new();
         }
@@ -112,17 +109,7 @@ namespace JsonToDataTableTester.ViewModels
             }
         }
 
-        void LoadJsonAsTable()
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "JSON Dateien (*.json)|*.json";
-
-            if (ofd.ShowDialog() == true)
-            {
-                var table = LoadTable(ofd.FileName);
-                DataTable = table;
-            }
-        }
+        //Use file dialog to open json file
         public string LoadJsonAsString()
         {
             string s = "";
@@ -149,9 +136,9 @@ namespace JsonToDataTableTester.ViewModels
 
             if (token is JArray)
             {
-                JArray array = token as JArray;
-                JObject obj = array.First as JObject;
-                foreach (var property in obj.Properties())
+                JArray? array = token as JArray;
+                JObject? obj = array.First as JObject;
+                foreach (JProperty property in obj.Properties())
                 {
                     dt.Columns.Add(property.Name, typeof(string));
                 }
@@ -168,7 +155,7 @@ namespace JsonToDataTableTester.ViewModels
             }
             else if (token is JObject)
             {
-                JObject obj = token as JObject;
+                JObject? obj = token as JObject;
                 foreach (var property in obj.Properties())
                 {
                     dt.Columns.Add(property.Name, typeof(string));
@@ -185,22 +172,7 @@ namespace JsonToDataTableTester.ViewModels
             return dt;
         }
 
-
-
-        private dynamic ConvertJObjectToDynamic(JObject jObject)
-        {
-            var expandoObj = new ExpandoObject();
-            var expandoObjCollection = (ICollection<KeyValuePair<string, object>>)expandoObj;
-
-            foreach (var keyValuePair in jObject)
-            {
-                expandoObjCollection.Add(new KeyValuePair<string, object>(keyValuePair.Key, keyValuePair.Value.ToString()));
-            }
-
-            return expandoObj;
-        }
-
-        bool containsJArray(JObject obj)
+        bool ContainsJArray(JObject obj)
         {
             bool contains = false;
 
@@ -222,10 +194,11 @@ namespace JsonToDataTableTester.ViewModels
 
             try
             {
-                // Deserialisieren des JSON-Strings
+                // Deserialize JSON-Strings
                 JObject jsonObject = JObject.Parse(json);
 
-                if (!containsJArray(jsonObject))
+                //Handle when no array in json
+                if (!ContainsJArray(jsonObject))
                 {
                     MainTable = ConvertJsonToDataTable(json);
                     string mainTableName = MainTable.TableName;
@@ -239,19 +212,23 @@ namespace JsonToDataTableTester.ViewModels
 
                 else
                 {
-                    string mainTableName = "main table";
-
-                    // Überprüfen, ob es nur eine Tabellenstruktur gibt
+                    string mainTableName = "Tabelle 1";
+                    // Check if there's only 1 array
                     if (jsonObject.Count == 1 && jsonObject.First.First is JArray jsonArray)
                     {
                         MainTable = CreateDataTable(jsonArray, mainTableName);
 
                         tables.Add(MainTable);
+                        mainTableName = MainTable.TableName;
+                        if (string.IsNullOrEmpty(mainTableName))
+                        {
+                            mainTableName = "Tabelle 1";
+                        }
                         SelectedTable = tables[0];
                         _tableNames.Add(mainTableName);
                     }
 
-                    else if (jsonObject.First is JObject jsonObj)
+                    else if (jsonObject.First is JObject jsonObj && jsonObject.First is not JArray)
                     {
                         MainTable = ConvertJsonToDataTable(json);
                         _tableNames.Add(MainTable.TableName);
@@ -260,13 +237,13 @@ namespace JsonToDataTableTester.ViewModels
 
                     else
                     {
-                        // Mehrere Tabellenstrukturen gefunden
+                        // multiple arrays
                         int tableCount = 1;
                         foreach (var property in jsonObject.Properties())
                         {
                             if (property.Value is JArray array)
                             {
-                                // Erstellen der DataTable für jedes Array
+                                // Create DataTable for array
                                 string tableName = property.Name ?? $"Tabelle{tableCount}";
                                 TableNames.Add(tableName);
                                 DataTable dataTable = CreateDataTable(array, tableName);
@@ -338,11 +315,10 @@ namespace JsonToDataTableTester.ViewModels
         }
 
 
-        public void Execute(int index = 0) {
+        public void Execute(int index = 0)
+        {
             _jsonStringInTextBox = _jsonStringInTextBox;
             CmbChanged(index);
         }
-
-
     }
 }

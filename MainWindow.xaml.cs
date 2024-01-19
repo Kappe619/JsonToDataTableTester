@@ -1,9 +1,6 @@
 ﻿using JsonToDataTableTester.ViewModels;
-using Microsoft.Win32;
-using System.Data;
 using System.IO;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace JsonToDataTableTester
 {
@@ -15,8 +12,6 @@ namespace JsonToDataTableTester
             vm = new MainViewModel();
             DataContext = vm;
             InitializeComponent();
-            
-
         }
 
         private void Select_Button_Click(object sender, RoutedEventArgs e)
@@ -24,20 +19,10 @@ namespace JsonToDataTableTester
             vm.LoadData();
         }
 
-
-        private void Execute_Button_Click(object sender, RoutedEventArgs e) {
-        
+        private void Execute_Button_Click(object sender, RoutedEventArgs e)
+        {
             int index = SelectTableBox.SelectedIndex;
             vm.Execute(index);
-                
-        }
-
-        private void ComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-          //if (sender is ComboBox box)
-          //  {
-          //      vm.CmbChanged(box.SelectedIndex);
-          //  }  
         }
 
         private void TextBox_Drop(object sender, DragEventArgs e)
@@ -50,7 +35,7 @@ namespace JsonToDataTableTester
                     string filePath = files[0];
 
                     if (Path.GetExtension(filePath).Equals(".json", StringComparison.OrdinalIgnoreCase))
-                    {                        
+                    {
                         vm.GetDataFromDrop(filePath);
                     }
                 }
