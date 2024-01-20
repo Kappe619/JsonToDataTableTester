@@ -96,8 +96,12 @@ namespace JsonToDataTableTester.ViewModels
 
         public void LoadData()
         {
-            JsonStringInTextBox = LoadJsonAsString();
-            ProcessJsonString(JsonStringInTextBox);
+            var (jsonString, dialogOk) = LoadJsonAsString();
+            if (dialogOk == true)
+            {
+                JsonStringInTextBox = jsonString;
+                ProcessJsonString(JsonStringInTextBox);
+            }
         }
 
         public void GetDataFromDrop(string filePath)
@@ -109,17 +113,22 @@ namespace JsonToDataTableTester.ViewModels
             }
         }
 
-        //Use file dialog to open json file
-        public string LoadJsonAsString()
+        //Use file dialog to open json file and check if dialog was true or cancelled
+        public (string jsonString, bool? dialogOk) LoadJsonAsString()
         {
             string s = "";
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "JSON Dateien (*.json)|*.json";
-            if (ofd.ShowDialog() == true)
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                Filter = "JSON Dateien (*.json)|*.json"
+            };
+
+            var dialogOk = ofd.ShowDialog();
+
+            if (dialogOk == true)
             {
                 s = File.ReadAllText(ofd.FileName);
             }
-            return s;
+            return (s, dialogOk);
         }
 
         public DataTable LoadTable(string filePath)
